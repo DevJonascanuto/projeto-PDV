@@ -63,3 +63,17 @@ a:hover {
 
     text-decoration: underline;
 }
+
+.vendas {    
+    width: 100%;
+    background: rgb(10, 184, 88);
+    
+
+
+}
+
+input{
+
+    display: flex;
+    text-align: start;
+}
