@@ -104,3 +104,16 @@ padding: 10px 20px;
     font-size: 16px;
     margin-top: 10px;
 }
+
+#openRegisterform{
+    background-color: #e21203;
+    color: white;
+    border: none;
+padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#openRegisterform:hover {
+    background-color: rgb(5, 100, 5);
+}

@@ -18,9 +18,17 @@
     </main>    
 
     <script>
+        if (localStorage.getItem("loggedIn") === "true") {
+            window.location.href = "index.html" // redireciona para a pagina inicial
+        }
+
+
+        // botao logout
         document.getElementById("logout").addEventListener("click", function() {
-            window.location.href = "index.html";
-        })
+            localStorage.removeItem("loggedIn"); // remove o item "loggedIn" do localStorage
+            window.location.href = "index.html"; // redireciona para a pagina inicial
+        }); 
+
     </script>
 
 
