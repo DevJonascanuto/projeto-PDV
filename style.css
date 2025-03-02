@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #807a7a;
     display: flex;
@@ -10,12 +10,12 @@ body{
 
 }
 
-.container{
+.container {
 
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 10px 0px rgba(0,0,0.1);
+    box-shadow: 0px 10px 0px rgba(0, 0, 0.1);
     text-align: center;
 
 
@@ -25,7 +25,7 @@ input {
 
     width: 100%;
     padding: 10px;
-    margin:  10px 0 ;
+    margin: 10px 0;
     border: 1px #ccc;
     border-radius: 5px;
 
@@ -34,25 +34,25 @@ input {
 
 button {
 
-        width: 100%;
-        padding: 10px;
-        color: aqua;
-        background-color: #ccc;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    color: aqua;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
 
 
 }
 
-button:hover{
+button:hover {
 
     background-color: #218838;
 
 }
 
-a{
+a {
     display: block;
     margin-top: 10px;
     color: #007bff;
@@ -64,15 +64,15 @@ a:hover {
     text-decoration: underline;
 }
 
-.vendas {    
+.vendas {
     width: 100%;
     background: rgb(10, 184, 88);
-    
+
 
 
 }
 
-input{
+input {
 
     display: flex;
     text-align: start;
@@ -81,39 +81,55 @@ input{
 /* estilo  parte de css da pagina home */
 
 body {
-    font-family: Arial, Helvetica, sans-serif   ;
-    background-color: #807a7a; 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #807a7a;
     padding: 0px;
     text-align: center;
 
-}   
+}
 
-header{
-    background-color: #3498db;
-    color: white;
-    padding: 20px;
-
+#bemvindo {
+    background-color: rgba(51, 51, 51, 0.7 );
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 button {
-    background-color: #e74c3c;
+    background-color:  rgba(51, 51, 51, 0.7 );
     color: white;
     border: none;
-padding: 10px 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 25%;
+}
+
+#openRegisterform {
+    background-color: #e21203;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
 }
 
-#openRegisterform{
-    background-color: #e21203;
-    color: white;
-    border: none;
-padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
 #openRegisterform:hover {
     background-color: rgb(5, 100, 5);
+
+}
+
+p{
+
+    top: 0;
+    left: 0;
 }
