@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
-
-
 </head>
-
 <body>
 
     <div class="container">
-        <h2>login</h2>
+        <h2>Login</h2>
+        
+        <!-- Formulário de Login -->
         <form id="loginForm">
-            <input type="email" id="email" placeholder="Digite seu e-mail" required>
-            <input type="password" id="password" placeholder="Digite sua senha" required>
+            <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required>
+            <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
             <button type="submit">Entrar</button>
         </form>
-        
-       
-        <p id="errorMessage" style=" color: red;display: none;"> email ou senha incorretos</p>
-        <button id="openRegisterform"  >cadastre-se </button>
-        
-        
 
+        <p id="errorMessage" style="color: red; display: none;">E-mail ou senha incorretos!</p>
+        
+        <!-- Botão para abrir o cadastro -->
+        <button id="openRegisterForm">Cadastre-se</button>
+    </div>
+
+    <!-- Formulário de Cadastro (inicialmente oculto) -->
+    <div class="container" id="registerContainer" style="display: none;">
+        <h2>Cadastro</h2>
+        <form id="registerForm">
+            <input type="email" id="registerEmail" placeholder="Digite seu e-mail" required>
+            <input type="password" id="registerPassword" placeholder="Digite sua senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <button id="backToLogin">Voltar ao Login</button>
     </div>
 
     <script>
-
-        let isRegistering = false; //define se esta no modo login ou cadastro
-
-
-        document.getElementById("toggleForm").addEventListener("click", function(event) {
-            event.preventDefault();
-            isRegistering = !isRegistering;
-
-            document.getElementById("formTitle").innerText = isRegistering ? "Cadastro" : "Login";
-            document.getElementById("submitButton").innerText = isRegistering ? "Cadastrar" : "Entrar";
-            document.getElementById("toggleForm").innerText = isRegistering ? "Login" : "Cadastro";
-            document.getElementById("errorMessage").style.display = "none";
+        // Alternar entre Login e Cadastro
+        document.getElementById("openRegisterForm").addEventListener("click", function() {
+            document.getElementById("loginForm").parentElement.style.display = "none";
+            document.getElementById("registerContainer").style.display = "block";
         });
 
-        //evento de envio do formulario
+        document.getElementById("backToLogin").addEventListener("click", function() {
+            document.getElementById("registerContainer").style.display = "none";
+            document.getElementById("loginForm").parentElement.style.display = "block";
+        });
 
-        document.getElementById("loginForm").addEventListener("submit", async function(event) {
-            event.preventDefault();  //evita o recarregmmento da pagina
+        // Evento de Cadastro
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("registerEmail").value;
+            var password = document.getElementById("registerPassword").value;
 
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value; 
-
-            if (isRegistering) {
-                //cadastro salva o email e senha no local store
-
-                localStorage.setItem("email", email);
-                localStorage.setItem("password", password);
-                alert("cadastro realizado com sucesso agora faça login");
-                isRegistering =false; //volta para o modo login
-                document.getElementById("formTitle").innerText = "Login";
-                document.getElementById("submitButton").innerText = "Entrar";
-                document.getElementById("toggleForm").innerText = "Cadastro";
-                document.getElementById("errorMessage").style.display = "none";
+            if (email && password) {
+                localStorage.setItem("userEmail", email);
+                localStorage.setItem("userPassword", password);
+                alert("Cadastro realizado com sucesso! Agora faça login.");
+                document.getElementById("registerContainer").style.display = "none";
+                document.getElementById("loginForm").parentElement.style.display = "block";
             } else {
-                //login verifica se o email e senha estao corretos  
-                var storedEmail = localStorage.getItem("email");
-                var storedPassword = localStorage.getItem("password");
-
-                if (email === storedEmail && password === storedPassword) {
-                    localStorage.setItem("loggedIn", "true"); //marca como logado
-                    window.location.href = "home.html"; //redireciona para a pagina inicial
-                } else {
-                    document.getElementById("errorMessage").style.display = "block";
-                }
+                alert("Preencha todos os campos!");
             }
         });
-               
-        
+
+        // Evento de Login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("loginEmail").value;
+            var password = document.getElementById("loginPassword").value;
+            var storedEmail = localStorage.getItem("userEmail");
+            var storedPassword = localStorage.getItem("userPassword");
+
+            if (email === storedEmail && password === storedPassword) {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        });
     </script>
 
-
-
-
 </body>
-
 </html>
