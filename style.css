@@ -14,20 +14,27 @@ body {
 
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
     box-shadow: 0px 10px 0px rgba(0, 0, 0.1);
     text-align: center;
+    width: 100%;
+    
+
+
 
 
 }
 
 input {
 
-    width: 100%;
+    width: 60%;
     padding: 10px;
     margin: 10px 0;
     border: 1px #ccc;
     border-radius: 5px;
+    text-align: center;
+    display: flex;
 
 }
 
@@ -36,7 +43,7 @@ button {
 
     width: 100%;
     padding: 10px;
-    color: aqua;
+    color: rgb(20, 6, 204);
     background-color: #ccc;
     border: none;
     border-radius: 5px;
@@ -48,7 +55,7 @@ button {
 
 button:hover {
 
-    background-color: #218838;
+    background-color: #1105b9;
 
 }
 
@@ -74,8 +81,13 @@ a:hover {
 
 input {
 
-    display: flex;
-    text-align: start;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    margin: 10px ;
+    border: 1px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* estilo  parte de css da pagina home */
@@ -133,3 +145,7 @@ p{
     top: 0;
     left: 0;
 }
+
+
+
+
