@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #807a7a;
+    background-color: #cc1414;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,14 +12,16 @@ body {
 
 .container {
 
-    background: white;
+    background: rgb(228, 10, 10);
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 10px solid #ccc;
     border-radius: 100px;
     box-shadow: 0px 10px 0px rgba(0, 0, 0.1);
     text-align: center;
-    width: 100%;
+    width: 75%;
+    margin-top: 100px;
     
+
 
 
 
@@ -31,7 +33,7 @@ input {
     width: 60%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px #ccc;
+    border: 10px #ccc;
     border-radius: 5px;
     text-align: center;
     display: flex;
